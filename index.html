@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>G's Playlists - Playlist 1</title>
   <!-- 引入 model-viewer -->
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
   <style>
     body {
-      background-color: #fef6f9;
+      background-color: #000;
       font-family: 'Helvetica Neue', sans-serif;
-      color: #333;
+      color: #fff;
       padding: 20px;
       max-width: 800px;
       margin: 0 auto;
@@ -20,13 +21,13 @@
     }
     h1 {
       font-size: 2.2em;
-      color: #e35b8f;
+      color: #fff;
     }
     .cover {
       width: 100%;
       max-width: 400px;
       border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(255,255,255,0.1);
       margin-bottom: 20px;
     }
     .tracklist {
@@ -44,10 +45,10 @@
       margin-top: 30px;
       font-size: 1em;
       line-height: 1.6;
-      background: #fff0f5;
+      background: #111;
       padding: 15px;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(255,255,255,0.05);
     }
     model-viewer {
       width: 100%;
@@ -60,9 +61,9 @@
 <body>
   <h1>🎧 G's Playlists - Rainy Day & Tea</h1>
 
-  <!-- 测试用 3D 模型（宇航员） -->
-  <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
-    alt="测试宇航员模型" 
+  <!-- 插入 pizza 模型 -->
+  <model-viewer src="pizza.glb" 
+    alt="pizza 模型" 
     camera-controls 
     auto-rotate 
     interaction-prompt="auto" 
