@@ -11,7 +11,7 @@
     body {
       background-color: #000;
       font-family: sans-serif;
-      color: #fff;
+      color: #d7f598;
       padding: 20px;
       max-width: 800px;
       margin: 0 auto;
@@ -51,16 +51,21 @@
       box-shadow: 0 2px 10px rgba(255,255,255,0.05);
     }
     model-viewer {
-  width: 100%;
-  max-width: 600px;
-  height: 500px;
-  margin: 40px auto;
-  background: none;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  display: block;
-}
+      width: 100%;
+      max-width: 600px;
+      height: 500px;
+      margin: 40px auto;
+      background: none;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      display: block;
+    }
+    .song-meta {
+      font-size: 0.9em;
+      margin-top: 5px;
+      color: #d7f598;
+    }
   </style>
 </head>
 <body>
@@ -71,44 +76,33 @@
     src="pizza.glb"
     alt="pizza 模型"
     camera-controls
-    auto-rotate
-    style="width: 100%; max-width: 600px; height: 500px; margin: 40px auto;">
+    auto-rotate>
   </model-viewer>
 
   <img src="cover1.jpg" alt="歌单封面" class="cover" />
 
+  <div class="notes">
+    <strong>Playlist 描述：</strong><br>
+    阴天的下午，适合窝在沙发里，听这些有点温柔、有点失落的旋律。
+  </div>
+
   <div class="tracklist">
     <div class="track">
-      <strong>01. Rainy Whisper</strong>
-      <audio controls>
-        <source src="track1.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+      <strong>01. Dilemma</strong>
+      <audio controls><source src="track1.mp3" type="audio/mpeg" /></audio>
+      <div class="song-meta">
+        🎨 封面：点评location<br>
+        🧑‍🎤 歌手：点评location<br>
+        ✏️ 点评：点评location
+      </div>
     </div>
     <div class="track">
-      <strong>02. Pink Lightroom</strong>
-      <audio controls>
-        <source src="track2.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+      <strong>02. If Only</strong>
+      <audio controls><source src="track2.mp3" type="audio/mpeg" /></audio>
+      <div class="song-meta">
+        🎨 封面：点评location<br>
+        🧑‍🎤 歌手：点评location<br>
+        ✏️ 点评：点评location
+      </div>
     </div>
-    <div class="track">
-      <strong>03. Midnight Drive</strong>
-      <audio controls>
-        <source src="track3.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-    <div class="track">
-      <strong>04. Soft Rain</strong>
-      <audio controls>
-        <source src="track4.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-    <div class="track">
-      <strong>
-    歌单介绍的位置，稍后添加
-  </div>
-</body>
-</html>
+    <div clas
