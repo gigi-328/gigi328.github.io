@@ -10,7 +10,7 @@
   <style>
     body {
       background-color: #000;
-      font-family: 'Helvetica Neue', sans-serif;
+      font-family: 'Eurostile', sans-serif;
       color: #fff;
       padding: 20px;
       max-width: 800px;
@@ -62,13 +62,18 @@
   <h1>🎧 G's Playlists - Rainy Day & Tea</h1>
 
   <!-- 插入 pizza 模型 -->
-  <model-viewer src="pizza.glb" 
-    alt="pizza 模型" 
-    camera-controls 
-    auto-rotate 
-    interaction-prompt="auto" 
-    shadow-intensity="1"
-    exposure="1">
+  <model-viewer
+    src="pizza.glb"
+    alt="pizza 模型"
+    camera-controls
+    auto-rotate
+    camera-orbit="20deg 65deg 1.6m"
+    field-of-view="30deg"
+    environment-image="neutral"
+    exposure="0.9"
+    shadow-intensity="0.8"
+    shadow-softness="1"
+    style="width: 100%; max-width: 600px; height: 500px; margin: 40px auto;">
   </model-viewer>
 
   <img src="cover1.jpg" alt="歌单封面" class="cover" />
