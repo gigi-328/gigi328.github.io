@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"/>
 
+  <!-- 3D 模型 Viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
 
@@ -136,12 +137,11 @@
       color: #fff;
     }
 
-    /* 第一首歌 SoundCloud 外层容器 */
+    /* 第一首歌 SoundCloud 容器背景 */
     .soundcloud-embed {
       background-color: #182878;
       padding: 6px;
       border-radius: 4px;
-      isolation: isolate;
     }
     .soundcloud-embed iframe {
       width: 100%;
@@ -149,7 +149,7 @@
       border: none;
       display: block;
       margin: 0;
-      mix-blend-mode: multiply; /* 保留深色滤镜效果 */
+      /* 不使用任何 filter/mix-blend-mode */
     }
 
     /* 统一 Spotify 嵌入宽度 */
@@ -172,6 +172,7 @@
   <div class="container">
     <h1>🎧 Playlist: Summer</h1>
 
+    <!-- 3D 模型 + 本地播放器 -->
     <div class="model-audio">
       <model-viewer src="dan.glb" alt="dan 模型" camera-controls auto-rotate></model-viewer>
       <div class="audio-list">
@@ -206,7 +207,7 @@
             <div class="soundcloud-embed">
               <iframe
                 scrolling="no" frameborder="no"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/orangeocean-music/summer-cozy-rock&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/orangeocean-music/summer-cozy-rock&amp;color=%23ffffff&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"
                 allow="autoplay">
               </iframe>
             </div>
@@ -238,7 +239,7 @@
           <div class="track-controls">
             <iframe
               width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/szababy2/kill-bill%3Futm_source%3Dclipboard&utm_medium=text&utm_campaign=social_sharing&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/szababy2/kill-bill&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
             <div class="track-desc">SZA's perfect, and i just love this blue blue ocean</div>
           </div>
@@ -255,14 +256,12 @@
               width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/findingfletcher/cherry&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
-            <div class="track-desc">
-              Where did that one hour go? after daylight saving time ends?<br>Unwritten. Unused.
-            </div>
+            <div class="track-desc">Where did that one hour go? after daylight saving time ends?<br>Unwritten. Unused.</div>
           </div>
         </div>
       </div>
 
-      <!-- 5. Jellyfish (Spotify, 统一宽度) -->
+      <!-- 5. Jellyfish (Spotify) -->
       <div class="track">
         <div class="track-header">Jellyfish – 落日飞车 (feat. Michael Seyer)</div>
         <div class="track-body">
@@ -292,9 +291,7 @@
               width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jiangshangqingshan/2vtvtb9exft6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
-            <div class="track-desc">
-              "西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.
-            </div>
+            <div class="track-desc">"西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.</div>
           </div>
         </div>
       </div>
@@ -309,10 +306,7 @@
               width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ckjyo/mystery-of-love-sufjan-stevens&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
-            <div class="track-desc">
-              Secrets melt, or evaporate.<br>
-              (The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )
-            </div>
+            <div class="track-desc">Secrets melt, or evaporate.<br>(The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )</div>
           </div>
         </div>
       </div>
@@ -357,12 +351,7 @@
               width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yukihiro-takahashi-official/where-are-you-heading-to-2024&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
-            <div class="track-desc">
-              Hope quits halfway, sometimes.<br>
-              Not that it matters i have no ties to this world.<br>
-              but you know, theres always somewhere else,<br>
-              so where are you heading to?
-            </div>
+            <div class="track-desc">Hope quits halfway, sometimes.<br>Not that it matters i have no ties to this world.<br>so where are you heading to?</div>
           </div>
         </div>
       </div>
