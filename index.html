@@ -43,7 +43,7 @@
       margin-top: 0;
     }
 
-    /* 3D 模型和两个本地播放器并列 */
+    /* 3D 模型 + 本地播放器 */
     .model-audio {
       display: flex;
       flex-wrap: wrap;
@@ -120,7 +120,6 @@
       flex-direction: column;
       gap: 8px;
     }
-    /* 缩小后的歌曲标题和描述 */
     .track-header {
       font-size: 1em;
       margin: 0 0 6px;
@@ -132,18 +131,20 @@
       color: #fff;
     }
 
-    /* 第一首歌 SoundCloud 容器配色 */
+    /* —— 第一首歌 SoundCloud 视觉定制 —— */
     .soundcloud-embed {
-      background-color: #182878;
+      background-color: #182878;  /* 外层容器背景 */
       padding: 6px;
       border-radius: 4px;
     }
     .soundcloud-embed iframe {
       width: 100%;
-      height: 83px;       /* 原 166px 缩一半 */
+      height: 83px;
       border: none;
       display: block;
       margin: 0;
+      /* CSS 滤镜：整体“染深”到 #182878 */
+      filter: invert(18%) sepia(92%) saturate(2077%) hue-rotate(194deg) brightness(86%) contrast(104%);
     }
 
     .spotify-embed iframe {
@@ -162,7 +163,6 @@
   <div class="container">
     <h1>🎧 Playlist: Summer</h1>
 
-    <!-- 3D 模型 + 本地播放器 -->
     <div class="model-audio">
       <model-viewer src="dan.glb" alt="dan 模型" camera-controls auto-rotate></model-viewer>
       <div class="audio-list">
@@ -191,7 +191,7 @@
             <div class="soundcloud-embed">
               <iframe
                 scrolling="no" frameborder="no"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/orangeocean-music/summer-cozy-rock&color=%23FFFFFF&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/orangeocean-music/summer-cozy-rock&color=%23ffffff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
                 allow="autoplay">
               </iframe>
             </div>
@@ -199,7 +199,6 @@
           </div>
         </div>
       </div>
-
       <!-- 2. Things Change -->
       <div class="track">
         <div class="track-header">Things Change – Busty and The Bass</div>
@@ -213,7 +212,6 @@
           </div>
         </div>
       </div>
-
       <!-- 3. Kill Bill -->
       <div class="track">
         <div class="track-header">Kill Bill – SZA</div>
@@ -227,7 +225,6 @@
           </div>
         </div>
       </div>
-
       <!-- 4. Cherry -->
       <div class="track">
         <div class="track-header">Cherry – FLETCHER / Hayley Kiyoko</div>
@@ -237,13 +234,10 @@
             <div class="spotify-embed">
               <iframe src="https://open.spotify.com/embed/track/1o9kTjiWJ5lTgKonUK6jAU?si=759f353a4f554391"></iframe>
             </div>
-            <div class="track-desc">
-              Where did that one hour go? after daylight saving time ends?<br>Unwritten. Unused.
-            </div>
+            <div class="track-desc">Where did that one hour go? after daylight saving time ends?<br>Unwritten. Unused.</div>
           </div>
         </div>
       </div>
-
       <!-- 5. Jellyfish -->
       <div class="track">
         <div class="track-header">Jellyfish – 落日飞车 (feat. Michael Seyer)</div>
@@ -257,7 +251,6 @@
           </div>
         </div>
       </div>
-
       <!-- 6. 云中加冕 -->
       <div class="track">
         <div class="track-header">云中加冕 (The Crown In The Clouds) – 江上青山 JasonYama</div>
@@ -271,7 +264,6 @@
           </div>
         </div>
       </div>
-
       <!-- 7. Mystery of Love -->
       <div class="track">
         <div class="track-header">Mystery of Love – Sufjan Stevens</div>
@@ -285,7 +277,6 @@
           </div>
         </div>
       </div>
-
       <!-- 8. Long Forgotten Flowers -->
       <div class="track">
         <div class="track-header">Long Forgotten Flowers – Pajaro Sunrise</div>
@@ -299,7 +290,6 @@
           </div>
         </div>
       </div>
-
       <!-- 9. 下个，路口，见 -->
       <div class="track">
         <div class="track-header">下个，路口，见 – 李宇春</div>
@@ -313,7 +303,6 @@
           </div>
         </div>
       </div>
-
       <!-- 10. WHERE ARE YOU HEADING TO? -->
       <div class="track">
         <div class="track-header">WHERE ARE YOU HEADING TO? – Yukihiro Takahashi</div>
@@ -327,8 +316,8 @@
           </div>
         </div>
       </div>
-
     </div>
+
   </div>
 </body>
 </html>
