@@ -14,8 +14,9 @@
   <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
 
   <style>
+    /* 固定背景为图片，左右未铺满部分显示黑色 */
     html {
-      background-color: #000; 
+      background-color: #000;
       background-image: url('summer.jpg');
       background-repeat: no-repeat;
       background-position: center center;
@@ -27,7 +28,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Courier Prime', monospace;
-      color: #ffffff;
+      color: #fff;
       min-height: 100%;
       display: flex;
       justify-content: center;
@@ -42,22 +43,23 @@
       font-size: 2.2em;
       text-align: center;
       margin-top: 0;
-      /* 文字已继承白色 */
     }
+    /* 3D 模型缩小一半 */
     model-viewer {
       width: 50%;
       max-width: 300px;
-      height: 250px;
+      height: 250px; /* 原来 500px 缩一半 */
       margin: 20px auto;
       background: none;
       border: none;
       box-shadow: none;
       display: block;
     }
+    /* 歌单描述文字放大，跟歌曲标题一样大 */
     .notes {
       margin: 20px 0;
-      font-size: 2.2em; /* 跟歌曲标题一样大 */
-      line-height: 1.6;
+      font-size: 2.2em;
+      line-height: 1.4;
       background: rgba(17,17,17,0.8);
       padding: 15px;
       border-radius: 12px;
@@ -72,7 +74,7 @@
       border-radius: 8px;
       margin-bottom: 20px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
     .track img {
       width: 80px;
@@ -85,29 +87,36 @@
     .track-controls {
       flex: 1;
     }
+    /* 歌曲标题放大 */
     .track-header {
-      font-size: 2.2em; /* 跟描述同大 */
+      font-size: 2.2em;
       margin: 0 0 8px;
+      color: #fff;
     }
+    /* 描述同样放大 */
     .track-desc {
-      font-size: 2.2em; /* 跟标题同大 */
+      font-size: 2.2em;
       line-height: 1.4;
+      color: #fff;
     }
+    /* SoundCloud 播放器上下高度缩小一半 */
     .soundcloud-embed iframe {
       width: 100%;
       max-width: 600px;
-      height: 83px;
+      height: 83px; /* 原 166px 缩一半 */
       border: none;
       background: transparent;
       display: block;
       margin-bottom: 8px;
     }
+    /* Spotify 播放器 */
     .spotify-embed iframe {
       width: 100%;
       max-width: 600px;
       height: 80px;
       border: none;
       display: block;
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -231,4 +240,26 @@
         <img src="cover9.jpg" alt="下个，路口，见 封面" />
         <div class="track-controls">
           <div class="track-header">下个，路口，见 – 李宇春</div>
-          <div class="spotify-embed"
+          <div class="spotify-embed">
+            <iframe src="https://open.spotify.com/embed/track/7oNXVeScJCnRg2FzxQ6z6o?si=a1de0585030c49d0"></iframe>
+          </div>
+          <div class="track-desc">-What did one wall say to the other wall?<br>-Meet you at the corner.</div>
+        </div>
+      </div>
+
+      <!-- 10. WHERE ARE YOU HEADING TO? -->
+      <div class="track">
+        <img src="cover10.jpg" alt="WHERE ARE YOU HEADING TO? 封面" />
+        <div class="track-controls">
+          <div class="track-header">WHERE ARE YOU HEADING TO? – Yukihiro Takahashi</div>
+          <div class="spotify-embed">
+            <iframe src="https://open.spotify.com/embed/track/10WeWYAkxHxppx3Jp7UQvn?si=21cfede636c9400e"></iframe>
+          </div>
+          <div class="track-desc">Hope quits halfway, sometimes.<br>Not that it matters i have no ties to this world.<br>but you know, theres always somewhere else,<br>so where are you heading to?</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
