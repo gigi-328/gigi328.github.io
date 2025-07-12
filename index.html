@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Playlist: Summer</title>
-  <!-- 引入 model-viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
   <style>
@@ -15,39 +14,23 @@
       padding: 20px;
       max-width: 800px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
     h1 {
       font-size: 2.2em;
       color: #fff;
+      text-align: center;
     }
-    .cover {
+    model-viewer {
       width: 100%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(255,255,255,0.1);
-      margin-bottom: 20px;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-    }
-    .cover:hover {
-      transform: scale(1.05);
-    }
-    .tracklist {
-      margin-top: 20px;
-      width: 100%;
-    }
-    .track {
-      margin-bottom: 12px;
-    }
-    audio {
-      width: 100%;
-      margin-top: 5px;
+      max-width: 600px;
+      height: 500px;
+      margin: 20px auto;
+      background: none;
+      border: none;
+      box-shadow: none;
     }
     .notes {
-      margin-top: 30px;
+      margin: 20px 0;
       font-size: 1em;
       line-height: 1.6;
       background: #111;
@@ -56,21 +39,40 @@
       box-shadow: 0 2px 10px rgba(255,255,255,0.05);
       color: #d7f598;
     }
-    model-viewer {
-      width: 100%;
-      max-width: 600px;
-      height: 500px;
-      margin: 40px auto;
-      background: none;
-      border: none;
-      outline: none;
-      box-shadow: none;
-      display: block;
+    .tracklist {
+      margin-top: 20px;
     }
-    .song-meta {
+    .track {
+      margin-bottom: 30px;
+    }
+    .track-header {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .track-body {
+      display: flex;
+      align-items: flex-start;
+    }
+    .track-body img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
+    .track-body .track-controls {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .track-body audio {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .track-body .track-desc {
       font-size: 0.9em;
-      margin-top: 5px;
-      color: #d7f598;
+      line-height: 1.4;
     }
     #song-details {
       display: none;
@@ -79,14 +81,13 @@
       padding: 15px;
       border-radius: 12px;
       margin-top: 20px;
-      box-shadow: 0 2px 10px rgba(255,255,255,0.1);
     }
   </style>
 </head>
 <body>
   <h1>🎧 Playlist: Summer</h1>
 
-  <!-- 插入 dan 模型 -->
+  <!-- 3D 模型 -->
   <model-viewer
     src="dan.glb"
     alt="dan 模型"
@@ -94,8 +95,7 @@
     auto-rotate>
   </model-viewer>
 
-  <img src="cover1.jpg" alt="歌单封面" class="cover" onclick="showSongDetails('Rainy Day & Tea', 'Artist: ABC', 'Genre: Chill, Soft')"/>
-
+  <!-- 描述区 -->
   <div class="notes">
     Summer is my least favorite season — humid, stormy, military drills under the sun.<br>
     But summer knows how to market itself: the longest break, the symbolic end of a chapter, and tag for youth.<br>
@@ -103,39 +103,66 @@
     The heat turns into restless heartbeat, and the downpour becomes the romance of sharing an umbrella with someone.
   </div>
 
+  <!-- 歌曲列表 -->
   <div class="tracklist">
-    <!-- 以下保持之前的 10 首歌曲结构 -->
+
+    <!-- 示例：第一首 -->
     <div class="track">
-      <strong>01. Dilemma</strong>
-      <audio controls><source src="track1.mp3" type="audio/mpeg" /></audio>
-      <img src="https://i.scdn.co/image/ab67616d0000b27323623cd2a7edb3e1d33d6c1e" class="cover" onclick="showSongDetails('Dilemma', 'Artist: Artist1', 'Genre: Pop, Chill')"/>
-      <div class="song-meta">
-        🎨 封面：点评location<br>
-        🧑‍🎤 歌手：点评location<br>
-        ✏️ 点评：点评location
+      <div class="track-header">01. Dilemma – Artist1</div>
+      <div class="track-body">
+        <!-- 左侧封面 -->
+        <img src="https://i.scdn.co/image/ab67616d0000b27323623cd2a7edb3e1d33d6c1e" alt="Dilemma cover" />
+        <!-- 右侧控件 + 描述 -->
+        <div class="track-controls">
+          <audio controls>
+            <source src="track1.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <div class="track-desc">
+            点评location
+          </div>
+        </div>
       </div>
     </div>
-    <!-- ... 其余 09-10. Cozy Outro 保持不变 ... -->
+
+    <!-- 继续：第二首 -->
     <div class="track">
-      <strong>10. Cozy Outro</strong>
-      <audio controls><source src="track10.mp3" type="audio/mpeg" /></audio>
-      <div class="song-meta">
-        🎨 封面：点评location<br>
-        🧑‍🎤 歌手：点评location<br>
-        ✏️ 点评：点评location
+      <div class="track-header">02. If Only – Artist2</div>
+      <div class="track-body">
+        <img src="https://i.scdn.co/image/ab67616d0000b27301902e201a0f02b60a5c393d" alt="If Only cover" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track2.mp3" type="audio/mpeg" />
+          </audio>
+          <div class="track-desc">
+            点评location
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- 歌曲详情显示 -->
-  <div id="song-details"></div>
+    <!-- 03. Dreams Tonite -->
+    <div class="track">
+      <div class="track-header">03. Dreams Tonite – Artist3</div>
+      <div class="track-body">
+        <img src="https://i.scdn.co/image/ab67616d0000b273349f9c29e05f8bff74e20626" alt="Dreams Tonite cover" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track3.mp3" type="audio/mpeg" />
+          </audio>
+          <div class="track-desc">
+            点评location
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script>
-    function showSongDetails(song, artist, genre) {
-      var details = document.getElementById('song-details');
-      details.style.display = 'block';
-      details.innerHTML = '<h3>' + song + ' - Details</h3><p>' + artist + '</p><p>' + genre + '</p>';
-    }
-  </script>
-</body>
-</html>
+    <!-- 04. Soft Rain -->
+    <div class="track">
+      <div class="track-header">04. Soft Rain – Artist4</div>
+      <div class="track-body">
+        <img src="cover4.jpg" alt="Soft Rain cover" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track4.mp3" type="audio/mpeg" />
+          <
