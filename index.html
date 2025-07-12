@@ -8,7 +8,7 @@
   <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
   <style>
     body {
-      background-color: #323333; /* 修改为新的暗灰背景 */
+      background-color: #323333;
       font-family: sans-serif;
       color: #d7f598;
       padding: 20px;
@@ -42,10 +42,10 @@
       margin-top: 20px;
     }
     .track {
-      background-color: #000;      /* 纯黑背景框 */
-      padding: 15px;               /* 内边距 */
-      border-radius: 8px;          /* 圆角 */
-      margin-bottom: 20px;         /* 与下一个 track 之间间距 */
+      background-color: #000;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
     .track-header {
       font-size: 1.1em;
@@ -77,213 +77,129 @@
       line-height: 1.4;
       color: #d7f598;
     }
-    #song-details {
-      display: none;
-      color: #fff;
-      background-color: #333;
-      padding: 15px;
-      border-radius: 12px;
-      margin-top: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
   </style>
 </head>
 <body>
   <h1>🎧 Playlist: Summer</h1>
 
-  <!-- 3D 模型展示 -->
-  <model-viewer
-    src="dan.glb"
-    alt="dan 模型"
-    camera-controls
-    auto-rotate>
-  </model-viewer>
+  <model-viewer src="dan.glb" alt="dan 模型" camera-controls auto-rotate></model-viewer>
 
-  <!-- 歌单总体描述 -->
   <div class="notes">
     summer's like a long exam. You answer absentmindedly, drifting in thought, until it's too late to finish, and all that's left is a few rushed sentences.
   </div>
 
-  <!-- 歌曲列表 -->
   <div class="tracklist">
 
-    <!-- 1 -->
     <div class="track">
       <div class="track-header">夏日漱石 – 橘子海 (Orange Ocean)</div>
       <div class="track-body">
         <img src="cover1.jpg" alt="夏日漱石 封面" />
         <div class="track-controls">
-          <audio controls>
-            <source src="track1.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            ultimate summer track, with the best bass line
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/4f0E8KfJNT1p5g5gAAkVdI" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">ultimate summer track, with the best bass line</div>
         </div>
       </div>
     </div>
 
-    <!-- 2 -->
     <div class="track">
       <div class="track-header">Things Change – Busty and The Bass</div>
       <div class="track-body">
         <img src="cover2.jpg" alt="Things Change 封面" />
         <div class="track-controls">
-          <audio controls>
-            <source src="track2.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            Let time collapse, dont talk about tomorrow.
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/2Hz1EneFJvNlQ9kTp6T3XP" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">Let time collapse, dont talk about tomorrow.</div>
         </div>
       </div>
     </div>
 
-    <!-- 3 -->
     <div class="track">
       <div class="track-header">Kill Bill – SZA</div>
       <div class="track-body">
         <img src="cover3.jpg" alt="Kill Bill 封面" />
         <div class="track-controls">
-          <audio controls>
-            <source src="track3.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            SZA's perfect, and i just love this blue blue ocean
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/3d0f1jPYEDU2wT3ieOwWqO" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">SZA's perfect, and i just love this blue blue ocean</div>
         </div>
       </div>
     </div>
 
-    <!-- 4 -->
     <div class="track">
       <div class="track-header">Cherry – FLETCHER / Hayley Kiyoko</div>
       <div class="track-body">
         <img src="cover4.jpg" alt="Cherry 封面" />
         <div class="track-controls">
-          <audio controls>
-            <source src="track4.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            Where did that one hour go? after daylight saving time ends?<br>
-            Unwritten. Unused.
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/3Bbmcp3TxG3CjV7l0OSnp7" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">Where did that one hour go? after daylight saving time ends?<br>Unwritten. Unused.</div>
         </div>
       </div>
     </div>
 
-    <!-- 5 -->
     <div class="track">
       <div class="track-header">Jellyfish (feat. Michael Seyer) – 落日飞车 / Michael Seyer</div>
       <div class="track-body">
         <img src="cover5.jpg" alt="Jellyfish 封面" />
         <div class="track-controls">
-          <audio controls>
-            <source src="track5.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            Jellyfish dont have heart. They drift, lost in thought.<br>
-            They die, dissolve into water, leave no trace, as they were never here.
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/0ObISpg5RHuzXq2ebDYwvg" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">Jellyfish dont have heart. They drift, lost in thought.<br>They die, dissolve into water, leave no trace, as they were never here.</div>
         </div>
       </div>
     </div>
 
-    <!-- 6 -->
     <div class="track">
       <div class="track-header">云中加冕 (The Crown In The Clouds) – 江上青山 JasonYama</div>
       <div class="track-body">
         <img src="cover6.jpg" alt="云中加冕 封面" />
         <div class="track-controls">
-          <audio controls>
-            <source src="track6.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            "西雅图的雨都下到纽约来了", translate: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/6tqdsSzXk5nTYj3rlrDD4d" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">"西雅图的雨都下到纽约来了", translate: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.</div>
         </div>
       </div>
     </div>
 
-    <!-- 7 -->
     <div class="track">
       <div class="track-header">Mystery of Love – Sufjan Stevens</div>
       <div class="track-body">
         <img src="cover7.jpg" alt="Mystery of Love 封面" />
         <div class="track-controls">
-          <audio controls>
-            <source src="track7.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            Secrets melt, or evaporate.<br>
-            (The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/4WJjp6p4Ot3DoVp3XYh74F" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">Secrets melt, or evaporate.<br>(The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )</div>
         </div>
       </div>
     </div>
 
-    <!-- 8 -->
     <div class="track">
       <div class="track-header">Run – Vanished</div>
       <div class="track-body">
         <img src="cover8.jpg" alt="Run 封面" />
         <div class="track-controls">
-          <audio controls>
-            <source src="track8.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            Normally, i hate EDM, but...
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/2Y91sZ3Jzn9GzAZPR0cMMa" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">Normally, i hate EDM, but...</div>
         </div>
       </div>
     </div>
 
-    <!-- 9 -->
     <div class="track">
       <div class="track-header">下个，路口，见 – 李宇春</div>
       <div class="track-body">
         <img src="cover9.jpg" alt="下个，路口，见 封面" />
         <div class="track-controls">
-          <audio controls>  
-            <source src="track9.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            -What did one wall say to the other wall?<br>
-            -Meet you at the corner.
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/1mndLRHW9DJ9lWeyuqa6DW" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">-What did one wall say to the other wall?<br>-Meet you at the corner.</div>
         </div>
       </div>
     </div>
 
-    <!-- 10 -->
     <div class="track">
       <div class="track-header">WHERE ARE YOU HEADING TO? – 高桥幸宏</div>
       <div class="track-body">
         <img src="cover10.jpg" alt="WHERE ARE YOU HEADING TO? 封面" />
         <div class="track-controls">
-          <audio controls>
-            <source src="track10.mp3" type="audio/mpeg">
-          </audio>
-          <div class="track-desc">
-            Hope quits halfway, sometimes.<br>
-            Not that it matters i have no ties to this world.<br>
-            but you know, theres always somewhere else,<br>
-            so where are you heading to?
-          </div>
+          <iframe src="https://open.spotify.com/embed/track/3vSnt6S0v7zAxaG6DpH1wD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="track-desc">Hope quits halfway, sometimes.<br>Not that it matters i have no ties to this world.<br>but you know, theres always somewhere else,<br>so where are you heading to?</div>
         </div>
       </div>
     </div>
 
   </div>
-
-  <!-- 可选：点击封面后显示详情 -->
-  <div id="song-details"></div>
-  <script>
-    function showSongDetails(song, artist, genre) {
-      var d = document.getElementById('song-details');
-      d.style.display = 'block';
-      d.innerHTML = '<h3>' + song + '</h3><p>' + artist + '</p><p>' + genre + '</p>';
-    }
-  </script>
 </body>
 </html>
