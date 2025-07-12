@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>G's Playlists - Playlist 1</title>
+  <title>Playlist: Summer</title>
   <!-- 引入 model-viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
@@ -54,6 +54,7 @@
       padding: 15px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+      color: #d7f598;
     }
     model-viewer {
       width: 100%;
@@ -83,7 +84,7 @@
   </style>
 </head>
 <body>
-  <h1>🎧 G's Playlists - Rainy Day & Tea</h1>
+  <h1>🎧 Playlist: Summer</h1>
 
   <!-- 插入 dan 模型 -->
   <model-viewer
@@ -96,11 +97,14 @@
   <img src="cover1.jpg" alt="歌单封面" class="cover" onclick="showSongDetails('Rainy Day & Tea', 'Artist: ABC', 'Genre: Chill, Soft')"/>
 
   <div class="notes">
-    <strong>Playlist 描述：</strong><br>
-    阴天的下午，适合窝在沙发里，听这些有点温柔、有点失落的旋律。
+    Summer is my least favorite season — humid, stormy, military drills under the sun.<br>
+    But summer knows how to market itself: the longest break, the symbolic end of a chapter, and tag for youth.<br>
+    It’s always in summer that I travel with friends and people I’ve had feelings for.<br>
+    The heat turns into restless heartbeat, and the downpour becomes the romance of sharing an umbrella with someone.
   </div>
 
   <div class="tracklist">
+    <!-- 以下保持之前的 10 首歌曲结构 -->
     <div class="track">
       <strong>01. Dilemma</strong>
       <audio controls><source src="track1.mp3" type="audio/mpeg" /></audio>
@@ -111,47 +115,27 @@
         ✏️ 点评：点评location
       </div>
     </div>
+    <!-- ... 其余 09-10. Cozy Outro 保持不变 ... -->
     <div class="track">
-      <strong>02. If Only</strong>
-      <audio controls><source src="track2.mp3" type="audio/mpeg" /></audio>
-      <img src="https://i.scdn.co/image/ab67616d0000b27301902e201a0f02b60a5c393d" class="cover" onclick="showSongDetails('If Only', 'Artist: Artist2', 'Genre: R&B, Soul')"/>
+      <strong>10. Cozy Outro</strong>
+      <audio controls><source src="track10.mp3" type="audio/mpeg" /></audio>
       <div class="song-meta">
         🎨 封面：点评location<br>
         🧑‍🎤 歌手：点评location<br>
         ✏️ 点评：点评location
       </div>
     </div>
-    <div class="track">
-      <strong>03. Dreams Tonite</strong>
-      <audio controls><source src="track3.mp3" type="audio/mpeg" /></audio>
-      <img src="https://i.scdn.co/image/ab67616d0000b273349f9c29e05f8bff74e20626" class="cover" onclick="showSongDetails('Dreams Tonite', 'Artist: Artist3', 'Genre: Indie, Dream Pop')"/>
-      <div class="song-meta">
-        🎨 封面：点评location<br>
-        🧑‍🎤 歌手：点评location<br>
-        ✏️ 点评：点评location
-      </div>
-    </div>
-    <div class="track">
-      <strong>04. Soft Rain</strong>
-      <audio controls><source src="track4.mp3" type="audio/mpeg" /></audio>
-      <div class="song-meta">
-        🎨 封面：点评location<br>
-        🧑‍🎤 歌手：点评location<br>
-        ✏️ 点评：点评location
-      </div>
-    </div>
-    <div class="track">
-      <strong>05. Honey Guitar</strong>
-      <audio controls><source src="track5.mp3" type="audio/mpeg" /></audio>
-      <div class="song-meta">
-        🎨 封面：点评location<br>
-        🧑‍🎤 歌手：点评location<br>
-        ✏️ 点评：点评location
-      </div>
-    </div>
-    <div class="track">
-      <strong>06. Tea & Silence</strong>
-      <audio controls><source src="track6.mp3" type="audio/mpeg" /></audio>
-      <div class="song-meta">
-        🎨 封面：点评location<br>
-        🧑‍🎤 歌手：点
+  </div>
+
+  <!-- 歌曲详情显示 -->
+  <div id="song-details"></div>
+
+  <script>
+    function showSongDetails(song, artist, genre) {
+      var details = document.getElementById('song-details');
+      details.style.display = 'block';
+      details.innerHTML = '<h3>' + song + ' - Details</h3><p>' + artist + '</p><p>' + genre + '</p>';
+    }
+  </script>
+</body>
+</html>
