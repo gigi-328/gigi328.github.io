@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,8 @@
   <title>Playlist: Summer</title>
 
   <!-- 引入 Courier Prime 字体 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"/>
 
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
@@ -135,11 +136,12 @@
       color: #fff;
     }
 
-    /* 第一首歌 SoundCloud 视觉定制 */
+    /* 第一首歌 SoundCloud 外层容器 */
     .soundcloud-embed {
       background-color: #182878;
       padding: 6px;
       border-radius: 4px;
+      isolation: isolate;
     }
     .soundcloud-embed iframe {
       width: 100%;
@@ -147,11 +149,16 @@
       border: none;
       display: block;
       margin: 0;
+      mix-blend-mode: multiply; /* 保留深色滤镜效果 */
     }
 
-    .spotify-embed iframe {
+    /* 统一 Spotify 嵌入宽度 */
+    .spotify-embed {
       width: 100%;
       max-width: 600px;
+    }
+    .spotify-embed iframe {
+      width: 100%;
       height: 80px;
       border: none;
       display: block;
@@ -199,7 +206,7 @@
             <div class="soundcloud-embed">
               <iframe
                 scrolling="no" frameborder="no"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/orangeocean-music/summer-cozy-rock&color=%23ffffff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/orangeocean-music/summer-cozy-rock&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
                 allow="autoplay">
               </iframe>
             </div>
@@ -215,9 +222,8 @@
           <img src="cover2.jpg" alt="Things Change 封面" />
           <div class="track-controls">
             <iframe
-              width="100%" height="83" scrolling="no" frameborder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bustyandthebass/things-change&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
-              allow="autoplay">
+              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bustyandthebass/things-change&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
             <div class="track-desc">Let time collapse, dont talk about tomorrow.</div>
           </div>
@@ -231,9 +237,8 @@
           <img src="cover3.jpg" alt="Kill Bill 封面" />
           <div class="track-controls">
             <iframe
-              width="100%" height="83" scrolling="no" frameborder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/szababy2/kill-bill&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
-              allow="autoplay">
+              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/szababy2/kill-bill%3Futm_source%3Dclipboard&utm_medium=text&utm_campaign=social_sharing&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
             <div class="track-desc">SZA's perfect, and i just love this blue blue ocean</div>
           </div>
@@ -247,9 +252,8 @@
           <img src="cover4.jpg" alt="Cherry 封面" />
           <div class="track-controls">
             <iframe
-              width="100%" height="83" scrolling="no" frameborder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/findingfletcher/cherry&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
-              allow="autoplay">
+              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/findingfletcher/cherry&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
             <div class="track-desc">
               Where did that one hour go? after daylight saving time ends?<br>Unwritten. Unused.
@@ -258,17 +262,18 @@
         </div>
       </div>
 
-      <!-- 5. Jellyfish (Spotify, width unified) -->
+      <!-- 5. Jellyfish (Spotify, 统一宽度) -->
       <div class="track">
         <div class="track-header">Jellyfish – 落日飞车 (feat. Michael Seyer)</div>
         <div class="track-body">
           <img src="cover5.jpg" alt="Jellyfish 封面" />
           <div class="track-controls">
-            <iframe class="spotify-embed"
-              width="100%" height="80"
-              src="https://open.spotify.com/embed/track/3n1tkrrlk3O9rdjFHy4wwk?si=646828829cd143d1"
-              allow="encrypted-media">
-            </iframe>
+            <div class="spotify-embed">
+              <iframe
+                src="https://open.spotify.com/embed/track/3n1tkrrlk3O9rdjFHy4wwk?si=646828829cd143d1"
+                allow="encrypted-media">
+              </iframe>
+            </div>
             <div class="track-desc">
               Jellyfish dont have heart. They drift, lost in thought.<br>
               They die, dissolve into water, leave no trace, as they were never here.
@@ -284,9 +289,8 @@
           <img src="cover6.jpg" alt="云中加冕 封面" />
           <div class="track-controls">
             <iframe
-              width="100%" height="83" scrolling="no" frameborder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jiangshangqingshan/2vtvtb9exft6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
-              allow="autoplay">
+              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jiangshangqingshan/2vtvtb9exft6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
             <div class="track-desc">
               "西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.
@@ -302,12 +306,12 @@
           <img src="cover7.jpg" alt="Mystery of Love 封面" />
           <div class="track-controls">
             <iframe
-              width="100%" height="83" scrolling="no" frameborder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ckjyo/mystery-of-love-sufjan-stevens&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
-              allow="autoplay">
+              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ckjyo/mystery-of-love-sufjan-stevens&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
             <div class="track-desc">
-              Secrets melt, or evaporate.<br>(The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )
+              Secrets melt, or evaporate.<br>
+              (The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )
             </div>
           </div>
         </div>
@@ -320,9 +324,8 @@
           <img src="cover8.jpg" alt="Long Forgotten Flowers 封面" />
           <div class="track-controls">
             <iframe
-              width="100%" height="83" scrolling="no" frameborder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pajarosunrise/pajaro-sunrise-long-forgotten&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
-              allow="autoplay">
+              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pajarosunrise/pajaro-sunrise-long-forgotten&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
             <div class="track-desc">you and I both get trapped in boring thoughts, sometimes.</div>
           </div>
@@ -336,9 +339,8 @@
           <img src="cover9.jpg" alt="下个，路口，见 封面" />
           <div class="track-controls">
             <iframe
-              width="100%" height="83" scrolling="no" frameborder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/chu-t-gi-1/4nsrdm2ruesk&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
-              allow="autoplay">
+              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/chu-t-gi-1/4nsrdm2ruesk&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
             <div class="track-desc">-What did one wall say to the other wall?<br>-Meet you at the corner.</div>
           </div>
@@ -352,12 +354,14 @@
           <img src="cover10.jpg" alt="WHERE ARE YOU HEADING TO? 封面" />
           <div class="track-controls">
             <iframe
-              width="100%" height="83" scrolling="no" frameborder="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yukihiro-takahashi-official/where-are-you-heading-to-2024&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
-              allow="autoplay">
+              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yukihiro-takahashi-official/where-are-you-heading-to-2024&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
             </iframe>
             <div class="track-desc">
-              Hope quits halfway, sometimes.<br>Not that it matters i have no ties to this world.<br>but you know, theres always somewhere else,<br>so where are you heading to?
+              Hope quits halfway, sometimes.<br>
+              Not that it matters i have no ties to this world.<br>
+              but you know, theres always somewhere else,<br>
+              so where are you heading to?
             </div>
           </div>
         </div>
@@ -367,3 +371,4 @@
   </div>
 </body>
 </html>
+```
