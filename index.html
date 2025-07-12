@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet" />
 
-  <!-- 3D Model Viewer -->
   <script type="module"
           src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js">
   </script>
@@ -53,6 +53,8 @@
       border-radius: 8px;
       font-size: 1.8em;
       margin: 0 auto 20px;
+      width: 100%;
+      max-width: 800px;
     }
 
     /* ===== 3D + 本地播放器 ===== */
@@ -74,14 +76,17 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      width: 100%;
+      align-items: center;
     }
     .audio-player {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       background: rgba(0,0,0,0.6);
       padding: 8px 12px;
       border-radius: 6px;
+      width: 100%;
     }
     .audio-player .track-header {
       font-size: 1em;
@@ -89,6 +94,8 @@
     }
     .audio-player audio {
       display: block;
+      width: auto;
+      height: 30px;
     }
 
     /* ===== “summer’s like” 文本 ===== */
@@ -436,10 +443,7 @@
               </iframe>
             </div>
             <div class="track-desc">
-              Hope quits halfway, sometimes.<br>
-              Not that it matters i have no ties to this world.<br>
-              but you know, theres always somewhere else,<br>
-              so where are you heading to?
+              Hope quits halfway, sometimes.<br>Not that it matters i have no ties to this world.<br>but you know, theres always somewhere else,<br>so where are you heading to?
             </div>
           </div>
         </div>
@@ -450,3 +454,4 @@
   </div>
 </body>
 </html>
+```
