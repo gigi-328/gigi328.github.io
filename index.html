@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Playlist: Summer</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
@@ -37,7 +37,6 @@
       padding: 15px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(255,255,255,0.05);
-      color: #d7f598;
     }
     .tracklist {
       margin-top: 20px;
@@ -61,16 +60,16 @@
       border-radius: 8px;
       margin-right: 20px;
     }
-    .track-body .track-controls {
+    .track-controls {
       flex: 1;
       display: flex;
       flex-direction: column;
     }
-    .track-body audio {
+    .track-controls audio {
       width: 100%;
       margin-bottom: 10px;
     }
-    .track-body .track-desc {
+    .track-desc {
       font-size: 0.9em;
       line-height: 1.4;
     }
@@ -87,7 +86,7 @@
 <body>
   <h1>🎧 Playlist: Summer</h1>
 
-  <!-- 3D 模型 -->
+  <!-- 3D 模型展示 -->
   <model-viewer
     src="dan.glb"
     alt="dan 模型"
@@ -95,7 +94,7 @@
     auto-rotate>
   </model-viewer>
 
-  <!-- 描述区 -->
+  <!-- 整体描述 -->
   <div class="notes">
     Summer is my least favorite season — humid, stormy, military drills under the sun.<br>
     But summer knows how to market itself: the longest break, the symbolic end of a chapter, and tag for youth.<br>
@@ -106,63 +105,146 @@
   <!-- 歌曲列表 -->
   <div class="tracklist">
 
-    <!-- 示例：第一首 -->
     <div class="track">
-      <div class="track-header">01. Dilemma – Artist1</div>
+      <div class="track-header">01. 夏日淑石 (Summer Cozy Rock) – 橘子海 (Orange Ocean)</div>
       <div class="track-body">
-        <!-- 左侧封面 -->
-        <img src="https://i.scdn.co/image/ab67616d0000b27323623cd2a7edb3e1d33d6c1e" alt="Dilemma cover" />
-        <!-- 右侧控件 + 描述 -->
+        <img src="cover1.jpg" alt="夏日淑石 封面" />
         <div class="track-controls">
           <audio controls>
-            <source src="track1.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
+            <source src="track1.mp3" type="audio/mpeg">
           </audio>
-          <div class="track-desc">
-            点评location
-          </div>
+          <div class="track-desc">点评location</div>
         </div>
       </div>
     </div>
 
-    <!-- 继续：第二首 -->
     <div class="track">
-      <div class="track-header">02. If Only – Artist2</div>
+      <div class="track-header">02. Things Change – Busty and The Bass</div>
       <div class="track-body">
-        <img src="https://i.scdn.co/image/ab67616d0000b27301902e201a0f02b60a5c393d" alt="If Only cover" />
+        <img src="cover2.jpg" alt="Things Change 封面" />
         <div class="track-controls">
           <audio controls>
-            <source src="track2.mp3" type="audio/mpeg" />
+            <source src="track2.mp3" type="audio/mpeg">
           </audio>
-          <div class="track-desc">
-            点评location
-          </div>
+          <div class="track-desc">点评location</div>
         </div>
       </div>
     </div>
 
-    <!-- 03. Dreams Tonite -->
     <div class="track">
-      <div class="track-header">03. Dreams Tonite – Artist3</div>
+      <div class="track-header">03. Kill Bill – SZA</div>
       <div class="track-body">
-        <img src="https://i.scdn.co/image/ab67616d0000b273349f9c29e05f8bff74e20626" alt="Dreams Tonite cover" />
+        <img src="cover3.jpg" alt="Kill Bill 封面" />
         <div class="track-controls">
           <audio controls>
-            <source src="track3.mp3" type="audio/mpeg" />
+            <source src="track3.mp3" type="audio/mpeg">
           </audio>
-          <div class="track-desc">
-            点评location
-          </div>
+          <div class="track-desc">点评location</div>
         </div>
       </div>
     </div>
 
-    <!-- 04. Soft Rain -->
     <div class="track">
-      <div class="track-header">04. Soft Rain – Artist4</div>
+      <div class="track-header">04. Cherry – FLETCHER / Hayley Kiyoko</div>
       <div class="track-body">
-        <img src="cover4.jpg" alt="Soft Rain cover" />
+        <img src="cover4.jpg" alt="Cherry 封面" />
         <div class="track-controls">
           <audio controls>
-            <source src="track4.mp3" type="audio/mpeg" />
-          <
+            <source src="track4.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">点评location</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="track-header">05. Jellyfish (feat. Michael Seyer) – 落日飞车 / Michael Seyer</div>
+      <div class="track-body">
+        <img src="cover5.jpg" alt="Jellyfish 封面" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track5.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">点评location</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="track-header">06. 云中加冕 (The Crown In The Clouds) – 江上青山 JasonYama</div>
+      <div class="track-body">
+        <img src="cover6.jpg" alt="云中加冕 封面" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track6.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">点评location</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="track-header">07. Mystery of Love – Sufjan Stevens</div>
+      <div class="track-body">
+        <img src="cover7.jpg" alt="Mystery of Love 封面" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track7.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">点评location</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="track-header">08. Run – Vanished</div>
+      <div class="track-body">
+        <img src="cover8.jpg" alt="Run 封面" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track8.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">点评location</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="track-header">09. 下个，路口，见 – 李宇春</div>
+      <div class="track-body">
+        <img src="cover9.jpg" alt="下个，路口，见 封面" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track9.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">点评location</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="track-header">10. WHERE ARE YOU HEADING TO? – 高桥幸宏</div>
+      <div class="track-body">
+        <img src="cover10.jpg" alt="WHERE ARE YOU HEADING TO? 封面" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track10.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">点评location</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 可选：点击封面后显示详情 -->
+  <div id="song-details"></div>
+  <script>
+    function showSongDetails(song, artist, genre) {
+      var d = document.getElementById('song-details');
+      d.style.display = 'block';
+      d.innerHTML = '<h3>' + song + '</h3><p>' + artist + '</p><p>' + genre + '</p>';
+    }
+  </script>
+</body>
+</html>
