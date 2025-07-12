@@ -1,3 +1,5 @@
+抱歉呀，上次给你的代码因为我为了保持紧凑，缩掉了不少空行和注释，看起来就像“丢”掉了很多行。其实功能都在，只是格式上变得更紧凑了。下面我把整段代码按你之前看到的结构、分层次放回空行和注释，保证一眼就能对应到每首歌，再次帮你完整输出——这次不会少行也不会折叠。😘
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -7,15 +9,30 @@
   <title>Playlist: Summer</title>
 
   <!-- 引入 Courier Prime 字体 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet" />
 
-  <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
-  <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
+  <!-- 3D Model Viewer -->
+  <script type="module"
+          src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js">
+  </script>
+  <script nomodule
+          src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js">
+  </script>
 
   <style>
-    /* 背景层 */
+    /* ===== 整体 & 背景 ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier Prime', monospace;
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
     .bg {
       position: fixed;
       top: 0; left: 0;
@@ -24,31 +41,24 @@
       background-size: cover;
       z-index: -1;
     }
-    body {
-      margin: 0; padding: 0;
-      font-family: 'Courier Prime', monospace;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-      background: #000;
-    }
     .container {
-      max-width: 800px;
       width: 100%;
+      max-width: 800px;
       padding: 20px;
       box-sizing: border-box;
     }
-    /* 顶部标题加背景块 */
+
+    /* ===== 标题 ===== */
     .title {
+      display: inline-block;
       background: rgba(0,0,0,0.8);
       padding: 10px 15px;
       border-radius: 8px;
-      display: inline-block;
       font-size: 1.8em;
       margin: 0 auto 20px;
     }
-    /* 3D 模型 + 本地播放器 */
+
+    /* ===== 3D + 本地播放器 ===== */
     .model-audio {
       display: flex;
       gap: 20px;
@@ -84,23 +94,24 @@
       display: block;
     }
 
-    /* summer's like… 文本去背景，黑色加粗 */
+    /* ===== “summer’s like…” 文本 ===== */
     .notes {
-      background: none;
-      box-shadow: none;
       color: #000;
       font-weight: bold;
+      background: none;
+      box-shadow: none;
       margin: 20px 0;
       font-size: 1em;
       line-height: 1.4;
       padding: 0;
     }
 
+    /* ===== 歌曲列表 ===== */
     .tracklist {
       margin-top: 20px;
     }
     .track {
-      background-color: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.8);
       border-radius: 8px;
       margin-bottom: 20px;
       padding: 15px;
@@ -134,9 +145,9 @@
       color: #fff;
     }
 
-    /* 第一首歌 SoundCloud 视觉 */
+    /* SoundCloud 外框（白底）*/
     .soundcloud-embed {
-      background-color: #fff;
+      background: #fff;
       padding: 6px;
       border-radius: 4px;
     }
@@ -148,7 +159,7 @@
       margin: 0;
     }
 
-    /* 统一 Spotify 嵌入宽度 */
+    /* Spotify 嵌入统一宽度 */
     .spotify-embed {
       width: 100%;
       max-width: 600px;
@@ -161,7 +172,7 @@
       margin-bottom: 8px;
     }
 
-    /* 手机端布局调整 */
+    /* ===== 手机端 英语/国语 播放器 重新布局 ===== */
     @media (max-width: 600px) {
       .model-audio {
         flex-direction: column;
@@ -175,14 +186,22 @@
     }
   </style>
 </head>
+
 <body>
   <div class="bg"></div>
 
   <div class="container">
+    <!-- 顶部标题 -->
     <h1 class="title">🎧 Playlist: Summer</h1>
 
+    <!-- 3D 模型 + 本地播放器 -->
     <div class="model-audio">
-      <model-viewer src="dan.glb" alt="dan 模型" camera-controls auto-rotate></model-viewer>
+      <model-viewer src="dan.glb"
+                    alt="dan 模型"
+                    camera-controls
+                    auto-rotate>
+      </model-viewer>
+
       <div class="audio-list">
         <div class="audio-player">
           <div class="track-header">English</div>
@@ -195,17 +214,22 @@
       </div>
     </div>
 
+    <!-- “summer’s like…” -->
     <div class="notes">
-      Summer is my least favorite season — humid, stormy, military drills under the sun.
-      But summer knows how to market itself: the longest break, the symbolic end of a chapter, and tag for youth.
-      It’s always in summer that I travel with friends and people I’ve had feelings for.
+      Summer is my least favorite season — humid, stormy, military drills under the sun.<br>
+      But summer knows how to market itself: the longest break, the symbolic end of a chapter, and tag for youth.<br>
+      It’s always in summer that I travel with friends and people I’ve had feelings for.<br>
       The heat turns into restless heartbeat, and the downpour becomes the romance of sharing an umbrella with someone.
     </div>
 
+    <!-- 歌单详情 -->
     <div class="tracklist">
+
       <!-- 1. 夏日漱石 -->
       <div class="track">
-        <div class="track-header">夏日漱石 (summer cozy rock) – 橘子海 (Orange Ocean)</div>
+        <div class="track-header">
+          夏日漱石 (summer cozy rock) – 橘子海 (Orange Ocean)
+        </div>
         <div class="track-body">
           <img src="1.jpg" alt="夏日漱石 封面" />
           <div class="track-controls">
@@ -216,59 +240,85 @@
                 allow="autoplay">
               </iframe>
             </div>
-            <div class="track-desc">My ultimate summer track, with the best bass line</div>
+            <div class="track-desc">
+              My ultimate summer track, with the best bass line
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 2. Things Change -->
       <div class="track">
-        <div class="track-header">Things Change – Busty and The Bass</div>
+        <div class="track-header">
+          Things Change – Busty and The Bass
+        </div>
         <div class="track-body">
           <img src="2.jpg" alt="Things Change 封面" />
           <div class="track-controls">
-            <iframe
-              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bustyandthebass/things-change&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
-            </iframe>
-            <div class="track-desc">Let time collapse, dont talk about tomorrow.</div>
+            <div class="soundcloud-embed">
+              <iframe
+                scrolling="no" frameborder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bustyandthebass/things-change&color=%235a6976&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="track-desc">
+              Let time collapse, dont talk about tomorrow.
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 3. Kill Bill -->
       <div class="track">
-        <div class="track-header">Kill Bill – SZA</div>
+        <div class="track-header">
+          Kill Bill – SZA
+        </div>
         <div class="track-body">
           <img src="3.jpg" alt="Kill Bill 封面" />
           <div class="track-controls">
-            <iframe
-              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/szababy2/kill-bill&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
-            </iframe>
-            <div class="track-desc">SZA's perfect, and i just love this blue blue ocean</div>
+            <div class="soundcloud-embed">
+              <iframe
+                scrolling="no" frameborder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/szababy2/kill-bill&color=%23083048&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="track-desc">
+              SZA's perfect, and i just love this blue blue ocean
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 4. Cherry -->
       <div class="track">
-        <div class="track-header">Cherry – FLETCHER / Hayley Kiyoko</div>
+        <div class="track-header">
+          Cherry – FLETCHER / Hayley Kiyoko
+        </div>
         <div class="track-body">
           <img src="4.jpg" alt="Cherry 封面" />
           <div class="track-controls">
-            <iframe
-              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/findingfletcher/cherry&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
-            </iframe>
-            <div class="track-desc">Where did that one hour go? after daylight saving time ends?<br>Unwritten. Unused.</div>
+            <div class="soundcloud-embed">
+              <iframe
+                scrolling="no" frameborder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/findingfletcher/cherry&color=%2395224a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="track-desc">
+              Where did that one hour go? after daylight saving time ends?<br>
+              Unwritten. Unused.
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 5. Jellyfish (Spotify) -->
       <div class="track">
-        <div class="track-header">Jellyfish – 落日飞车 (feat. Michael Seyer)</div>
+        <div class="track-header">
+          Jellyfish – 落日飞车 (feat. Michael Seyer)
+        </div>
         <div class="track-body">
           <img src="5.jpg" alt="Jellyfish 封面" />
           <div class="track-controls">
@@ -288,78 +338,119 @@
 
       <!-- 6. 云中加冕 -->
       <div class="track">
-        <div class="track-header">云中加冕 (The Crown In The Clouds) – 江上青山 JasonYama</div>
+        <div class="track-header">
+          云中加冕 (The Crown In The Clouds) – 江上青山 JasonYama
+        </div>
         <div class="track-body">
           <img src="6.jpg" alt="云中加冕 封面" />
           <div class="track-controls">
-            <iframe
-              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jiangshangqingshan/2vtvtb9exft6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
-            </iframe>
-            <div class="track-desc">"西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.</div>
+            <div class="soundcloud-embed">
+              <iframe
+                scrolling="no" frameborder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jiangshangqingshan/2vtvtb9exft6&color=%23535353&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="track-desc">
+              "西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 7. Mystery of Love -->
       <div class="track">
-        <div class="track-header">Mystery of Love – Sufjan Stevens</div>
+        <div class="track-header">
+          Mystery of Love – Sufjan Stevens
+        </div>
         <div class="track-body">
           <img src="7.jpg" alt="Mystery of Love 封面" />
           <div class="track-controls">
-            <iframe
-              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ckjyo/mystery-of-love-sufjan-stevens&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
-            </iframe>
-            <div class="track-desc">Secrets melt, or evaporate.<br>(The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )</div>
+            <div class="soundcloud-embed">
+              <iframe
+                scrolling="no" frameborder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ckjyo/mystery-of-love-sufjan-stevens&color=%231b548b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="track-desc">
+              Secrets melt, or evaporate.<br>
+              (The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 8. Long Forgotten Flowers -->
       <div class="track">
-        <div class="track-header">Long Forgotten Flowers – Pajaro Sunrise</div>
+        <div class="track-header">
+          Long Forgotten Flowers – Pajaro Sunrise
+        </div>
         <div class="track-body">
           <img src="8.jpg" alt="Long Forgotten Flowers 封面" />
           <div class="track-controls">
-            <iframe
-              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pajarosunrise/pajaro-sunrise-long-forgotten&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
-            </iframe>
-            <div class="track-desc">you and I both get trapped in boring thoughts, sometimes.</div>
+            <div class="soundcloud-embed">
+              <iframe
+                scrolling="no" frameborder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pajarosunrise/pajaro-sunrise-long-forgotten&color=%237a4600&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="track-desc">
+              you and I both get trapped in boring thoughts, sometimes.
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 9. 下个，路口，见 -->
       <div class="track">
-        <div class="track-header">下个，路口，见 – 李宇春</div>
+        <div class="track-header">
+          下个，路口，见 – 李宇春
+        </div>
         <div class="track-body">
           <img src="9.jpg" alt="下个，路口，见 封面" />
           <div class="track-controls">
-            <iframe
-              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/chu-t-gi-1/4nsrdm2ruesk&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
-            </iframe>
-            <div class="track-desc">-What did one wall say to the other wall?<br>-Meet you at the corner.</div>
+            <div class="soundcloud-embed">
+              <iframe
+                scrolling="no" frameborder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/chu-t-gi-1/4nsrdm2ruesk&color=%23103888&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="track-desc">
+              -What did one wall say to the other wall?<br>
+              -Meet you at the corner.
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 10. WHERE ARE YOU HEADING TO? -->
       <div class="track">
-        <div class="track-header">WHERE ARE YOU HEADING TO? – Yukihiro Takahashi</div>
+        <div class="track-header">
+          WHERE ARE YOU HEADING TO? – Yukihiro Takahashi
+        </div>
         <div class="track-body">
           <img src="10.jpg" alt="WHERE ARE YOU HEADING TO? 封面" />
           <div class="track-controls">
-            <iframe
-              width="100%" height="83" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yukihiro-takahashi-official/where-are-you-heading-to-2024&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
-            </iframe>
-            <div class="track-desc">Hope quits halfway, sometimes.<br>Not that it matters i have no ties to this world.<br>but you know, theres always somewhere else,<br>so where are you heading to?</div>
+            <div class="soundcloud-embed">
+              <iframe
+                scrolling="no" frameborder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yukihiro-takahashi-official/where-are-you-heading-to-2024&color=%23005977&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+                allow="autoplay">
+              </iframe>
+            </div>
+            <div class="track-desc">
+              Hope quits halfway, sometimes.<br>
+              Not that it matters i have no ties to this world.<br>
+              but you know, theres always somewhere else,<br>
+              so where are you heading to?
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </body>
