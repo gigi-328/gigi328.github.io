@@ -14,7 +14,7 @@
   <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
 
   <style>
-    /* 固定背景层，覆盖全屏，左右空白黑色 */
+    /* 背景层：固定不动，左右空白黑色 */
     .bg {
       position: fixed;
       top: 0; left: 0;
@@ -42,6 +42,8 @@
       text-align: center;
       margin-top: 0;
     }
+
+    /* 3D 模型和两个本地播放器并列 */
     .model-audio {
       display: flex;
       flex-wrap: wrap;
@@ -57,7 +59,6 @@
       background: none;
       border: none;
       box-shadow: none;
-      display: block;
     }
     .audio-list {
       flex: 1;
@@ -78,6 +79,7 @@
     .audio-player audio {
       width: auto;
     }
+
     .notes {
       margin: 20px 0;
       font-size: 1em;
@@ -87,6 +89,7 @@
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
+
     .tracklist {
       margin-top: 20px;
     }
@@ -105,7 +108,8 @@
       gap: 15px;
     }
     .track img {
-      width: 80px; height: 80px;
+      width: 80px;
+      height: 80px;
       object-fit: cover;
       border-radius: 4px;
       flex-shrink: 0;
@@ -127,15 +131,21 @@
       line-height: 1.4;
       color: #fff;
     }
+
+    /* 第一首歌 SoundCloud 容器配色 */
+    .soundcloud-embed {
+      background-color: #182878;
+      padding: 6px;
+      border-radius: 4px;
+    }
     .soundcloud-embed iframe {
       width: 100%;
-      max-width: 600px;
       height: 83px;       /* 原 166px 缩一半 */
       border: none;
-      background: transparent;
       display: block;
-      margin-bottom: 8px;
+      margin: 0;
     }
+
     .spotify-embed iframe {
       width: 100%;
       max-width: 600px;
@@ -147,13 +157,12 @@
   </style>
 </head>
 <body>
-  <!-- 背景层 -->
   <div class="bg"></div>
 
   <div class="container">
     <h1>🎧 Playlist: Summer</h1>
 
-    <!-- 3D 模型 + 两个本地播放器 -->
+    <!-- 3D 模型 + 本地播放器 -->
     <div class="model-audio">
       <model-viewer src="dan.glb" alt="dan 模型" camera-controls auto-rotate></model-viewer>
       <div class="audio-list">
@@ -173,7 +182,6 @@
     </div>
 
     <div class="tracklist">
-
       <!-- 1. 夏日漱石 -->
       <div class="track">
         <div class="track-header">夏日漱石 (summer cozy rock) – 橘子海 (Orange Ocean)</div>
@@ -181,9 +189,9 @@
           <img src="cover1.jpg" alt="夏日漱石 封面" />
           <div class="track-controls">
             <div class="soundcloud-embed">
-              <iframe 
+              <iframe
                 scrolling="no" frameborder="no"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/orangeocean-music/summer-cozy-rock?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/orangeocean-music/summer-cozy-rock&color=%23FFFFFF&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
                 allow="autoplay">
               </iframe>
             </div>
@@ -245,10 +253,7 @@
             <div class="spotify-embed">
               <iframe src="https://open.spotify.com/embed/track/3n1tkrrlk3O9rdjFHy4wwk?si=646828829cd143d1"></iframe>
             </div>
-            <div class="track-desc">
-              Jellyfish dont have heart. They drift, lost in thought.<br>
-              They die, dissolve into water, leave no trace, as they were never here.
-            </div>
+            <div class="track-desc">Jellyfish dont have heart. They drift, lost in thought.<br>They die, dissolve into water, leave no trace, as they were never here.</div>
           </div>
         </div>
       </div>
@@ -262,9 +267,7 @@
             <div class="spotify-embed">
               <iframe src="https://open.spotify.com/embed/track/6V5QIhnE6o13mPGgJKmwRx?si=0a51bb408ef84e6b"></iframe>
             </div>
-            <div class="track-desc">
-              "西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.
-            </div>
+            <div class="track-desc">"西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.</div>
           </div>
         </div>
       </div>
@@ -276,12 +279,9 @@
           <img src="cover7.jpg" alt="Mystery of Love 封面" />
           <div class="track-controls">
             <div class="spotify-embed">
-              <iframe src="https://openspotify.com/embed/track/0MNNKSUU9OOQ8DSGWduw79?si=173b39f4bc1d4a2f"></iframe>
+              <iframe src="https://open.spotify.com/embed/track/0MNNKSUU9OOQ8DSGWduw79?si=173b39f4bc1d4a2f"></iframe>
             </div>
-            <div class="track-desc">
-              Secrets melt, or evaporate.<br>
-              (The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )
-            </div>
+            <div class="track-desc">Secrets melt, or evaporate.<br>(The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )</div>
           </div>
         </div>
       </div>
@@ -309,9 +309,7 @@
             <div class="spotify-embed">
               <iframe src="https://open.spotify.com/embed/track/7oNXVeScJCnRg2FzxQ6z6o?si=a1de0585030c49d0"></iframe>
             </div>
-            <div class="track-desc">
-              -What did one wall say to the other wall?<br>-Meet you at the corner.
-            </div>
+            <div class="track-desc">-What did one wall say to the other wall?<br>-Meet you at the corner.</div>
           </div>
         </div>
       </div>
@@ -325,12 +323,7 @@
             <div class="spotify-embed">
               <iframe src="https://open.spotify.com/embed/track/10WeWYAkxHxppx3Jp7UQvn?si=21cfede636c9400e"></iframe>
             </div>
-            <div class="track-desc">
-              Hope quits halfway, sometimes.<br>
-              Not that it matters i have no ties to this world.<br>
-              but you know, theres always somewhere else,<br>
-              so where are you heading to?
-            </div>
+            <div class="track-desc">Hope quits halfway, sometimes.<br>Not that it matters i have no ties to this world.<br>but you know, theres always somewhere else,<br>so where are you heading to?</div>
           </div>
         </div>
       </div>
