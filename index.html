@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Playlist: Summer</title>
-  <!-- 引入 model-viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
   <style>
     body {
-      background-color: #000;
+      background-color: #323333; /* 修改为新的暗灰背景 */
       font-family: sans-serif;
       color: #d7f598;
       padding: 20px;
@@ -37,13 +36,16 @@
       background: #111;
       padding: 15px;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     .tracklist {
       margin-top: 20px;
     }
     .track {
-      margin-bottom: 30px;
+      background-color: #000;      /* 纯黑背景框 */
+      padding: 15px;               /* 内边距 */
+      border-radius: 8px;          /* 圆角 */
+      margin-bottom: 20px;         /* 与下一个 track 之间间距 */
     }
     .track-header {
       font-size: 1.1em;
@@ -58,7 +60,7 @@
       width: 120px;
       height: 120px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 4px;
       margin-right: 20px;
     }
     .track-controls {
@@ -73,6 +75,7 @@
     .track-desc {
       font-size: 0.9em;
       line-height: 1.4;
+      color: #d7f598;
     }
     #song-details {
       display: none;
@@ -81,6 +84,7 @@
       padding: 15px;
       border-radius: 12px;
       margin-top: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
   </style>
 </head>
@@ -225,3 +229,61 @@
         <img src="cover8.jpg" alt="Run 封面" />
         <div class="track-controls">
           <audio controls>
+            <source src="track8.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">
+            Normally, i hate EDM, but...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="track">
+      <div class="track-header">下个，路口，见 – 李宇春</div>
+      <div class="track-body">
+        <img src="cover9.jpg" alt="下个，路口，见 封面" />
+        <div class="track-controls">
+          <audio controls>  
+            <source src="track9.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">
+            -What did one wall say to the other wall?<br>
+            -Meet you at the corner.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="track">
+      <div class="track-header">WHERE ARE YOU HEADING TO? – 高桥幸宏</div>
+      <div class="track-body">
+        <img src="cover10.jpg" alt="WHERE ARE YOU HEADING TO? 封面" />
+        <div class="track-controls">
+          <audio controls>
+            <source src="track10.mp3" type="audio/mpeg">
+          </audio>
+          <div class="track-desc">
+            Hope quits halfway, sometimes.<br>
+            Not that it matters i have no ties to this world.<br>
+            but you know, theres always somewhere else,<br>
+            so where are you heading to?
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 可选：点击封面后显示详情 -->
+  <div id="song-details"></div>
+  <script>
+    function showSongDetails(song, artist, genre) {
+      var d = document.getElementById('song-details');
+      d.style.display = 'block';
+      d.innerHTML = '<h3>' + song + '</h3><p>' + artist + '</p><p>' + genre + '</p>';
+    }
+  </script>
+</body>
+</html>
