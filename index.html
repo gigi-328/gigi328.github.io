@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Playlist: Summer</title>
 
+  <!-- 引入 Courier Prime 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"/>
+
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
 
   <style>
     html {
-      background-color: #000;
+      background-color: #000; 
       background-image: url('summer.jpg');
       background-repeat: no-repeat;
       background-position: center center;
@@ -21,8 +26,8 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
-      color: #d7f598;
+      font-family: 'Courier Prime', monospace;
+      color: #ffffff;
       min-height: 100%;
       display: flex;
       justify-content: center;
@@ -35,14 +40,14 @@
     }
     h1 {
       font-size: 2.2em;
-      color: #fff;
       text-align: center;
       margin-top: 0;
+      /* 文字已继承白色 */
     }
     model-viewer {
-      width: 50%;             /* 缩小一半 */
+      width: 50%;
       max-width: 300px;
-      height: 250px;          /* 原 500px 缩一半 */
+      height: 250px;
       margin: 20px auto;
       background: none;
       border: none;
@@ -51,7 +56,7 @@
     }
     .notes {
       margin: 20px 0;
-      font-size: 1.1em;       /* 和歌曲标题一样大 */
+      font-size: 2.2em; /* 跟歌曲标题一样大 */
       line-height: 1.6;
       background: rgba(17,17,17,0.8);
       padding: 15px;
@@ -81,28 +86,22 @@
       flex: 1;
     }
     .track-header {
-      font-size: 1.1em;
+      font-size: 2.2em; /* 跟描述同大 */
       margin: 0 0 8px;
-      color: #fff;
     }
     .track-desc {
-      font-size: 0.9em;
+      font-size: 2.2em; /* 跟标题同大 */
       line-height: 1.4;
-      color: #d7f598;
     }
-
-    /* SoundCloud embed 恢复原大小，上下高度缩小一半 */
     .soundcloud-embed iframe {
       width: 100%;
       max-width: 600px;
-      height: 83px;          /* 原 166px 缩一半 */
+      height: 83px;
       border: none;
       background: transparent;
       display: block;
       margin-bottom: 8px;
     }
-
-    /* Spotify embeds */
     .spotify-embed iframe {
       width: 100%;
       max-width: 600px;
@@ -139,9 +138,7 @@
               allow="autoplay">
             </iframe>
           </div>
-          <div class="track-desc">
-            My ultimate summer track, with the best bass line
-          </div>
+          <div class="track-desc">My ultimate summer track, with the best bass line</div>
         </div>
       </div>
 
@@ -201,9 +198,7 @@
           <div class="spotify-embed">
             <iframe src="https://open.spotify.com/embed/track/6V5QIhnE6o13mPGgJKmwRx?si=0a51bb408ef84e6b"></iframe>
           </div>
-          <div class="track-desc">
-            "西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.
-          </div>
+          <div class="track-desc">"西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud, even if the rain won’t leave us alone.</div>
         </div>
       </div>
 
@@ -236,26 +231,4 @@
         <img src="cover9.jpg" alt="下个，路口，见 封面" />
         <div class="track-controls">
           <div class="track-header">下个，路口，见 – 李宇春</div>
-          <div class="spotify-embed">
-            <iframe src="https://open.spotify.com/embed/track/7oNXVeScJCnRg2FzxQ6z6o?si=a1de0585030c49d0"></iframe>
-          </div>
-          <div class="track-desc">-What did one wall say to the other wall?<br>-Meet you at the corner.</div>
-        </div>
-      </div>
-
-      <!-- 10. WHERE ARE YOU HEADING TO? -->
-      <div class="track">
-        <img src="cover10.jpg" alt="WHERE ARE YOU HEADING TO? 封面" />
-        <div class="track-controls">
-          <div class="track-header">WHERE ARE YOU HEADING TO? – Yukihiro Takahashi</div>
-          <div class="spotify-embed">
-            <iframe src="https://open.spotify.com/embed/track/10WeWYAkxHxppx3Jp7UQvn?si=21cfede636c9400e"></iframe>
-          </div>
-          <div class="track-desc">Hope quits halfway, sometimes.<br>Not that it matters i have no ties to this world.<br>but you know, theres always somewhere else,<br>so where are you heading to?</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</body>
-</html>
+          <div class="spotify-embed"
