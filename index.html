@@ -10,12 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet" />
 
-  <script type="module"
-          src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js">
-  </script>
-  <script nomodule
-          src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js">
-  </script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer-legacy.js"></script>
 
   <style>
     /* 整体 & 背景 */
@@ -86,11 +82,7 @@
       width: 100%;
     }
     .audio-player .track-header { margin: 0; }
-    .audio-player audio {
-      width: auto;
-      height: 30px;
-    }
-    /* 只保留播放按钮 */
+    .audio-player audio { width: auto; height: 30px; }
     .audio-player audio::-webkit-media-controls-timeline,
     .audio-player audio::-webkit-media-controls-current-time-display,
     .audio-player audio::-webkit-media-controls-time-remaining-display,
@@ -102,7 +94,7 @@
       display: block !important;
     }
 
-    /* summer’s like 文本 */
+    /* “summer’s like” 文本 */
     .notes {
       color: #000;
       font-weight: bold;
@@ -112,15 +104,15 @@
       text-align: center;
     }
 
-    /* 歌曲列表 */
+    /* 歌单详情 */
     .tracklist { margin-top: 20px; }
     .track {
-      background: rgba(0,0,0,0.7);  /* 背景色块 70% 不透明 */
+      background: rgba(0,0,0,0.7);
       border-radius: 8px;
       margin-bottom: 20px;
       padding: 15px;
       text-align: center;
-      opacity: 1;  /* 内容 100% 不透明 */
+      opacity: 1;
     }
     .track-header {
       font-size: 1em;
@@ -141,26 +133,15 @@
       text-align: center;
     }
 
-    /* SoundCloud 嵌入 */
-    .soundcloud-embed {
+    .soundcloud-embed,
+    .spotify-embed {
       background: #fff;
       padding: 6px;
       border-radius: 4px;
-      width: 95%;         /* 宽度增加 15% */
+      width: 95%;
       margin: 0 auto;
     }
-    .soundcloud-embed iframe {
-      width: 100%;
-      height: 120px;
-      border: none;
-      display: block;
-    }
-
-    /* Spotify 嵌入 */
-    .spotify-embed {
-      width: 95%;         /* 与 SoundCloud 完全一致 */
-      margin: 0 auto;
-    }
+    .soundcloud-embed iframe,
     .spotify-embed iframe {
       width: 100%;
       height: 120px;
@@ -168,40 +149,24 @@
       display: block;
     }
 
-    /* 留言板块 */
+    /* Utterances 评论区 */
     .comment-section {
       background: rgba(0,0,0,0.7);
       border-radius: 8px;
       padding: 15px;
-      margin-top: 20px;
+      margin-top: 30px;
       text-align: center;
-      opacity: 1;
     }
     .comment-section h2 {
       margin: 0 0 10px;
       color: #fff;
     }
-    .comment-section textarea {
-      width: 95%;
-      height: 100px;
-      padding: 8px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-family: 'Courier Prime', monospace;
-      resize: vertical;
-    }
-    .comment-section button {
-      margin-top: 10px;
-      padding: 8px 16px;
-      font-family: 'Courier Prime', monospace;
-      border: none;
-      border-radius: 4px;
-      background: #182878;
-      color: #fff;
-      cursor: pointer;
+    .comment-section p {
+      margin: 0 0 10px;
+      color: #ddd;
+      font-size: 0.9em;
     }
 
-    /* 手机端 本地播放器 布局 */
     @media (max-width: 600px) {
       .model-audio {
         flex-direction: column;
@@ -219,12 +184,10 @@
   <div class="bg"></div>
   <div class="container">
 
-    <!-- 顶部标题 -->
     <h1 class="title">🎧 Playlist: Summer</h1>
 
-    <!-- 3D + 本地播放器 -->
     <div class="model-audio">
-      <model-viewer src="dan.glb" alt="dan 模型" camera-controls auto-rotate></model-viewer>
+      <model-viewer src="dan.glb" alt="dan model" camera-controls auto-rotate></model-viewer>
       <div class="audio-list">
         <div class="audio-player">
           <div class="track-header">English</div>
@@ -237,12 +200,10 @@
       </div>
     </div>
 
-    <!-- summer’s like -->
     <div class="notes">
       summer's like a long exam. You answer absentmindedly, drifting in thought, until it's too late to finish, and all that's left is a few rushed sentences.
     </div>
 
-    <!-- 歌单详情 -->
     <div class="tracklist">
       <!-- 1. 夏日漱石 -->
       <div class="track" style="background-color: rgba(26,28,119,0.7);">
@@ -256,6 +217,7 @@
           <div class="track-desc">ultimate summer track, with the best bass line</div>
         </div>
       </div>
+
       <!-- 2. Things Change -->
       <div class="track" style="background-color: rgba(90,105,118,0.7);">
         <div class="track-header">Things Change – Busty and The Bass</div>
@@ -268,6 +230,7 @@
           <div class="track-desc">Let time collapse, dont talk about tomorrow.</div>
         </div>
       </div>
+
       <!-- 3. Kill Bill -->
       <div class="track" style="background-color: rgba(8,48,72,0.7);">
         <div class="track-header">Kill Bill – SZA</div>
@@ -280,6 +243,7 @@
           <div class="track-desc">SZA's perfect, and i just love this blue blue ocean cover.</div>
         </div>
       </div>
+
       <!-- 4. Cherry -->
       <div class="track" style="background-color: rgba(149,34,74,0.7);">
         <div class="track-header">Cherry – FLETCHER / Hayley Kiyoko</div>
@@ -294,11 +258,12 @@
           </div>
         </div>
       </div>
+
       <!-- 5. Jellyfish (Spotify) -->
       <div class="track" style="background-color: rgba(126,65,58,0.7);">
         <div class="track-header">Jellyfish – 落日飞车 (feat. Michael Seyer)</div>
         <div class="track-controls">
-          <div class="spotify-embed">
+          <div class="spotify-embed">  
             <iframe src="https://open.spotify.com/embed/track/3n1tkrrlk3O9rdjFHy4wwk?si=646828829cd143d1" allow="encrypted-media"></iframe>
           </div>
           <div class="track-desc">
@@ -306,6 +271,7 @@
           </div>
         </div>
       </div>
+
       <!-- 6. 云中加冕 -->
       <div class="track" style="background-color: rgba(83,83,83,0.7);">
         <div class="track-header">云中加冕 (The Crown In The Clouds) – 江上青山 JasonYama</div>
@@ -320,6 +286,7 @@
           </div>
         </div>
       </div>
+
       <!-- 7. Mystery of Love -->
       <div class="track" style="background-color: rgba(27,84,139,0.7);">
         <div class="track-header">Mystery of Love – Sufjan Stevens</div>
@@ -334,6 +301,7 @@
           </div>
         </div>
       </div>
+
       <!-- 8. Long Forgotten Flowers -->
       <div class="track" style="background-color: rgba(122,70,0,0.7);">
         <div class="track-header">Long Forgotten Flowers – Pajaro Sunrise</div>
@@ -348,6 +316,7 @@
           </div>
         </div>
       </div>
+
       <!-- 9. 下个，路口，见 -->
       <div class="track" style="background-color: rgba(170,54,59,0.7);">
         <div class="track-header">下个，路口，见 – 李宇春</div>
@@ -357,9 +326,12 @@
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/chu-t-gi-1/4nsrdm2ruesk&color=%23AA363B&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
-          <div class="track-desc">-What did one wall say to the other wall?<br>-Meet you at the corner.</div>
+          <div class="track-desc">
+            -What did one wall say to the other wall?<br>-Meet you at the corner.
+          </div>
         </div>
       </div>
+
       <!-- 10. WHERE ARE YOU HEADING TO? -->
       <div class="track" style="background-color: rgba(80,124,42,0.7);">
         <div class="track-header">WHERE ARE YOU HEADING TO? – Yukihiro Takahashi</div>
@@ -379,12 +351,18 @@
       </div>
     </div>
 
-    <!-- 留言板块 -->
     <div class="comment-section">
-      <h2>留言板</h2>
-      <textarea placeholder="写下你的留言..."></textarea>
-      <br/>
-      <button type="button">提交留言</button>
+      <h2>Comments</h2>
+      <p>We welcome everyone’s feedback and thoughts!</p>
+      <div id="utterances-container"></div>
+      <script src="https://utteranc.es/client.js"
+              repo="gigi328/playlist-comments"
+              issue-term="pathname"
+              label="comment"
+              theme="github-light"
+              crossorigin="anonymous"
+              async>
+      </script>
     </div>
 
   </div>
