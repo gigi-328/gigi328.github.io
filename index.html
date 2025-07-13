@@ -146,7 +146,7 @@
       background: #fff;
       padding: 6px;
       border-radius: 4px;
-      width: 95%;
+      width: 95%;         /* 宽度增加 15% */
       margin: 0 auto;
     }
     .soundcloud-embed iframe {
@@ -158,7 +158,7 @@
 
     /* Spotify 嵌入 */
     .spotify-embed {
-      width: 95%;
+      width: 95%;         /* 与 SoundCloud 完全一致 */
       margin: 0 auto;
     }
     .spotify-embed iframe {
@@ -166,6 +166,39 @@
       height: 120px;
       border: none;
       display: block;
+    }
+
+    /* 留言板块 */
+    .comment-section {
+      background: rgba(0,0,0,0.7);
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 20px;
+      text-align: center;
+      opacity: 1;
+    }
+    .comment-section h2 {
+      margin: 0 0 10px;
+      color: #fff;
+    }
+    .comment-section textarea {
+      width: 95%;
+      height: 100px;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-family: 'Courier Prime', monospace;
+      resize: vertical;
+    }
+    .comment-section button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      font-family: 'Courier Prime', monospace;
+      border: none;
+      border-radius: 4px;
+      background: #182878;
+      color: #fff;
+      cursor: pointer;
     }
 
     /* 手机端 本地播放器 布局 */
@@ -211,97 +244,74 @@
 
     <!-- 歌单详情 -->
     <div class="tracklist">
-
       <!-- 1. 夏日漱石 -->
-      <div class="track" style="background-color: #1A1C77;">
-        <div class="track-header">
-          夏日漱石 (summer cozy rock) – 橘子海 (Orange Ocean)
-        </div>
+      <div class="track" style="background-color: rgba(26,28,119,0.7);">
+        <div class="track-header">夏日漱石 (summer cozy rock) – 橘子海 (Orange Ocean)</div>
         <div class="track-controls">
           <div class="soundcloud-embed">
-            <iframe
-              scrolling="no" frameborder="no"
+            <iframe scrolling="no" frameborder="no"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/orangeocean-music/summer-cozy-rock&color=%23182878&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
-          <div class="track-desc">
-            ultimate summer track, with the best bass line
-          </div>
+          <div class="track-desc">ultimate summer track, with the best bass line</div>
         </div>
       </div>
-
       <!-- 2. Things Change -->
       <div class="track" style="background-color: rgba(90,105,118,0.7);">
         <div class="track-header">Things Change – Busty and The Bass</div>
         <div class="track-controls">
           <div class="soundcloud-embed">
-            <iframe
-              scrolling="no" frameborder="no"
+            <iframe scrolling="no" frameborder="no"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bustyandthebass/things-change&color=%235a6976&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
-          <div class="track-desc">
-            Let time collapse, dont talk about tomorrow.
-          </div>
+          <div class="track-desc">Let time collapse, dont talk about tomorrow.</div>
         </div>
       </div>
-
       <!-- 3. Kill Bill -->
       <div class="track" style="background-color: rgba(8,48,72,0.7);">
         <div class="track-header">Kill Bill – SZA</div>
         <div class="track-controls">
           <div class="soundcloud-embed">
-            <iframe
-              scrolling="no" frameborder="no"
+            <iframe scrolling="no" frameborder="no"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/szababy2/kill-bill&color=%23083048&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
-          <div class="track-desc">
-            SZA's perfect, and i just love this blue blue ocean cover.
-          </div>
+          <div class="track-desc">SZA's perfect, and i just love this blue blue ocean cover.</div>
         </div>
       </div>
-
       <!-- 4. Cherry -->
       <div class="track" style="background-color: rgba(149,34,74,0.7);">
         <div class="track-header">Cherry – FLETCHER / Hayley Kiyoko</div>
         <div class="track-controls">
           <div class="soundcloud-embed">
-            <iframe
-              scrolling="no" frameborder="no"
+            <iframe scrolling="no" frameborder="no"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/findingfletcher/cherry&color=%2395224a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
           <div class="track-desc">
-            Where did that one hour go? after daylight saving time ends?<br>
-            Unwritten. Unused.
+            Where did that one hour go? after daylight saving time ends?<br>Unwritten. Unused.
           </div>
         </div>
       </div>
-
       <!-- 5. Jellyfish (Spotify) -->
       <div class="track" style="background-color: rgba(126,65,58,0.7);">
         <div class="track-header">Jellyfish – 落日飞车 (feat. Michael Seyer)</div>
         <div class="track-controls">
           <div class="spotify-embed">
-            <iframe
-              src="https://open.spotify.com/embed/track/3n1tkrrlk3O9rdjFHy4wwk?si=646828829cd143d1"
-              allow="encrypted-media"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/3n1tkrrlk3O9rdjFHy4wwk?si=646828829cd143d1" allow="encrypted-media"></iframe>
           </div>
           <div class="track-desc">
-            Jellyfish dont have heart. They drift, lost in thought.<br>
-            They die, dissolve into water, leave no trace, as they were never here.
+            Jellyfish dont have heart. They drift, lost in thought.<br>They die, dissolve into water, leave no trace, as they were never here.
           </div>
         </div>
       </div>
-
       <!-- 6. 云中加冕 -->
       <div class="track" style="background-color: rgba(83,83,83,0.7);">
         <div class="track-header">云中加冕 (The Crown In The Clouds) – 江上青山 JasonYama</div>
         <div class="track-controls">
           <div class="soundcloud-embed">
-            <iframe
-              scrolling="no" frameborder="no"
+            <iframe scrolling="no" frameborder="no"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jiangshangqingshan/2vtvtb9exft6&color=%23535353&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
@@ -310,64 +320,52 @@
           </div>
         </div>
       </div>
-
       <!-- 7. Mystery of Love -->
       <div class="track" style="background-color: rgba(27,84,139,0.7);">
         <div class="track-header">Mystery of Love – Sufjan Stevens</div>
-        <div class="track-controls">  
+        <div class="track-controls">
           <div class="soundcloud-embed">
-            <iframe
-              scrolling="no" frameborder="no"
+            <iframe scrolling="no" frameborder="no"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ckjyo/mystery-of-love-sufjan-stevens&color=%231b548b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
           <div class="track-desc">
-            Secrets melt, or evaporate.<br>
-            (The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )
+            Secrets melt, or evaporate.<br>(The film was beautiful, both actors are goodlooking, but one is marrying into the Kardashians, and the other turned out to be a cannibal. Men... )
           </div>
         </div>
       </div>
-
       <!-- 8. Long Forgotten Flowers -->
       <div class="track" style="background-color: rgba(122,70,0,0.7);">
         <div class="track-header">Long Forgotten Flowers – Pajaro Sunrise</div>
         <div class="track-controls">
           <div class="soundcloud-embed">
-            <iframe
-              scrolling="no" frameborder="no"
+            <iframe scrolling="no" frameborder="no"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pajarosunrise/pajaro-sunrise-long-forgotten&color=%237a4600&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
           <div class="track-desc">
-            Normally, i hate EDM, but...
+            you and I both get trapped in boring thoughts, sometimes.
           </div>
         </div>
       </div>
-
       <!-- 9. 下个，路口，见 -->
       <div class="track" style="background-color: rgba(170,54,59,0.7);">
         <div class="track-header">下个，路口，见 – 李宇春</div>
         <div class="track-controls">
           <div class="soundcloud-embed">
-            <iframe
-              scrolling="no" frameborder="no"
+            <iframe scrolling="no" frameborder="no"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/chu-t-gi-1/4nsrdm2ruesk&color=%23AA363B&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
-          <div class="track-desc">
-            -What did one wall say to the other wall?<br>
-            -Meet you at the corner.
-          </div>
+          <div class="track-desc">-What did one wall say to the other wall?<br>-Meet you at the corner.</div>
         </div>
       </div>
-
       <!-- 10. WHERE ARE YOU HEADING TO? -->
       <div class="track" style="background-color: rgba(80,124,42,0.7);">
         <div class="track-header">WHERE ARE YOU HEADING TO? – Yukihiro Takahashi</div>
         <div class="track-controls">
           <div class="soundcloud-embed">
-            <iframe
-              scrolling="no" frameborder="no"
+            <iframe scrolling="no" frameborder="no"
               src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yukihiro-takahashi-official/where-are-you-heading-to-2024&color=%23507C2A&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
               allow="autoplay"></iframe>
           </div>
@@ -379,7 +377,14 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- 留言板块 -->
+    <div class="comment-section">
+      <h2>留言板</h2>
+      <textarea placeholder="写下你的留言..."></textarea>
+      <br/>
+      <button type="button">提交留言</button>
     </div>
 
   </div>
