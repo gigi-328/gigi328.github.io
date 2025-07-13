@@ -52,7 +52,7 @@
       border-radius: 8px;
       font-size: 1.8em;
       margin: 0 auto 20px;
-      width: 80%;           /* 与音乐模块宽度一致 */
+      width: 100%;           /* 与音乐模块背景块一致 */
       text-align: center;
     }
 
@@ -102,7 +102,7 @@
       display: block !important;
     }
 
-    /* “summer’s like” 文本 */
+    /* summer’s like 文本 */
     .notes {
       color: #000;
       font-weight: bold;
@@ -146,7 +146,7 @@
       background: #fff;
       padding: 6px;
       border-radius: 4px;
-      width: 95%;       /* 原 80% 增加 15% */
+      width: 95%;         /* 宽度增加 15% */
       margin: 0 auto;
     }
     .soundcloud-embed iframe {
@@ -158,7 +158,7 @@
 
     /* Spotify 嵌入 */
     .spotify-embed {
-      width: 80%;
+      width: 95%;         /* 与 SoundCloud 完全一致 */
       margin: 0 auto;
     }
     .spotify-embed iframe {
@@ -213,7 +213,7 @@
     <div class="tracklist">
 
       <!-- 1. 夏日漱石 -->
-      <div class="track" style="background-color: #1A1C77;">
+      <div class="track" style="background-color: rgba(26,28,119,0.7);">
         <div class="track-header">
           夏日漱石 (summer cozy rock) – 橘子海 (Orange Ocean)
         </div>
@@ -256,14 +256,116 @@
         </div>
       </div>
 
-      <!-- 以下其它模块保持不变… -->
       <!-- 4. Cherry -->
+      <div class="track" style="background-color: rgba(149,34,74,0.7);">
+        <div class="track-header">Cherry – FLETCHER / Hayley Kiyoko</div>
+        <div class="track-controls">
+          <div class="soundcloud-embed">
+            <iframe
+              scrolling="no" frameborder="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/findingfletcher/cherry&color=%2395224a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+              allow="autoplay"></iframe>
+          </div>
+          <div class="track-desc">
+            Where did that one hour go? after daylight saving time ends?<br>
+            Unwritten. Unused.
+          </div>
+        </div>
+      </div>
+
       <!-- 5. Jellyfish (Spotify) -->
+      <div class="track" style="background-color: rgba(126,65,58,0.7);">
+        <div class="track-header">Jellyfish – 落日飞车 (feat. Michael Seyer)</div>
+        <div class="track-controls">
+          <div class="spotify-embed">
+            <iframe
+              src="https://open.spotify.com/embed/track/3n1tkrrlk3O9rdjFHy4wwk?si=646828829cd143d1"
+              allow="encrypted-media"></iframe>
+          </div>
+          <div class="track-desc">
+            Jellyfish dont have heart. They drift, lost in thought.<br>
+            They die, dissolve into water, leave no trace.
+          </div>
+        </div>
+      </div>
+
       <!-- 6. 云中加冕 -->
+      <div class="track" style="background-color: rgba(83,83,83,0.7);">
+        <div class="track-header">云中加冕 – 江上青山 JasonYama</div>
+        <div class="track-controls">
+          <div class="soundcloud-embed">
+            <iframe
+              scrolling="no" frameborder="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/jiangshangqingshan/2vtvtb9exft6&color=%23535353&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+              allow="autoplay"></iframe>
+          </div>
+          <div class="track-desc">
+            "西雅图的雨都下到纽约来了", translation: I'd stand with you where the wind is loud.
+          </div>
+        </div>
+      </div>
+
       <!-- 7. Mystery of Love -->
+      <div class="track" style="background-color: rgba(27,84,139,0.7);">
+        <div class="track-header">Mystery of Love – Sufjan Stevens</div>
+        <div class="track-controls">
+          <div class="soundcloud-embed">
+            <iframe
+              scrolling="no" frameborder="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ckjyo/mystery-of-love-sufjan-stevens&color=%231b548b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+              allow="autoplay"></iframe>
+          </div>
+          <div class="track-desc">
+            Secrets melt, or evaporate.<br>
+            (The film was beautiful, both actors are goodlooking…)
+          </div>
+        </div>
+      </div>
+
       <!-- 8. Long Forgotten Flowers -->
+      <div class="track" style="background-color: rgba(122,70,0,0.7);">
+        <div class="track-header">Long Forgotten Flowers – Pajaro Sunrise</div>
+        <div class="track-controls">
+          <div class="soundcloud-embed">
+            <iframe
+              scrolling="no" frameborder="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/pajarosunrise/pajaro-sunrise-long-forgotten&color=%237a4600&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+              allow="autoplay"></iframe>
+          </div>
+          <div class="track-desc">you and I both get trapped in boring thoughts, sometimes.</div>
+        </div>
+      </div>
+
       <!-- 9. 下个，路口，见 -->
+      <div class="track" style="background-color: rgba(170,54,59,0.7);">
+        <div class="track-header">下个，路口，见 – 李宇春</div>
+        <div class="track-controls">
+          <div class="soundcloud-embed">
+            <iframe
+              scrolling="no" frameborder="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/chu-t-gi-1/4nsrdm2ruesk&color=%23AA363B&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+              allow="autoplay"></iframe>
+          </div>
+          <div class="track-desc">-What did one wall say to the other wall?<br>-Meet you at the corner.</div>
+        </div>
+      </div>
+
       <!-- 10. WHERE ARE YOU HEADING TO? -->
+      <div class="track" style="background-color: rgba(80,124,42,0.7);">
+        <div class="track-header">WHERE ARE YOU HEADING TO? – Yukihiro Takahashi</div>
+        <div class="track-controls">
+          <div class="soundcloud-embed">
+            <iframe
+              scrolling="no" frameborder="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yukihiro-takahashi-official/where-are-you-heading-to-2024&color=%23507C2A&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+              allow="autoplay"></iframe>
+          </div>
+          <div class="track-desc">
+            Hope quits halfway, sometimes.<br>
+            Not that it matters I have no ties to this world… so where are you heading to?
+          </div>
+        </div>
+      </div>
 
     </div>
 
